@@ -44,9 +44,13 @@
             <environment>Sandbox</environment>
             <target>Cloudhub-US-East-1</target>
             <muleVersion>${app.runtime}</muleVersion>
-            <username>${anypoint.username}</username>
-            <password>${anypoint.password}</password>
-            <businessGroup>ChandlerSandbox</businessGroup>
+            
+
+      <!-- Connected App -->
+            <connectedAppClientId>${anypoint.clientId}</connectedAppClientId>
+            <connectedAppClientSecret>${anypoint.clientSecret}</connectedAppClientSecret>
+            <connectedAppGrantType>client_credentials</connectedAppGrantType>
+      
             <replicas>1</replicas>
             <vCores>0.1</vCores>
             
