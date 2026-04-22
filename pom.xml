@@ -35,7 +35,7 @@
                     <businessGroupId>001b9e0e-b33b-4b0b-a11d-1b175a5492f2</businessGroupId>
                     <provider>MC</provider>
                     <applicationName>my-mule-app-12345</applicationName>
-                    <environment>Sandbox</environment>
+                    <environment>${anypoint.environment}</environment>
                     <target>Cloudhub-US-East-1</target>
                     <muleVersion>${app.runtime}</muleVersion>
                     <connectedAppClientId>${anypoint.clientId}</connectedAppClientId>
