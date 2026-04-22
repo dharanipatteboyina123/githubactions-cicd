@@ -31,41 +31,31 @@
 				<extensions>true</extensions>
 			</plugin>
 			<plugin>
-                <groupId>org.mule.tools.maven</groupId>
-                <artifactId>mule-maven-plugin</artifactId>
-                <version>${mule.maven.plugin.version}</version>
-                <extensions>true</extensions>
+    <groupId>org.mule.tools.maven</groupId>
+    <artifactId>mule-maven-plugin</artifactId>
+    <version>${mule.maven.plugin.version}</version>
+    <extensions>true</extensions>
 
-                <configuration>
-                    <cloudhub2Deployment>
+    <configuration>
+        <cloudhub2Deployment>
 
-                        <!-- Unique App Name -->
-                        <applicationName>my-mule-app-12345</applicationName>
+            <applicationName>my-mule-app-12345</applicationName>
+            <environment>Sandbox</environment>
 
-                        <!-- Environment -->
-                        <environment>Sandbox</environment>
+            <region>us-east-1</region>
 
-                        <!-- Region -->
-                        <region>us-east-1</region>
+            <muleVersion>4.4.0</muleVersion>
 
-                        <!-- Runtime -->
-                        <muleVersion>4.4.0</muleVersion>
+            <replicas>1</replicas>
+            <vCores>0.1</vCores>
 
-                        <!-- Scaling -->
-                        <replicas>1</replicas>
+            <ingress>
+                <publicUrl>true</publicUrl>
+            </ingress>
 
-                        <!-- CPU -->
-                        <vCores>0.1</vCores>
-
-                        <!-- Public Access -->
-                        <ingress>
-                            <publicUrl>true</publicUrl>
-                        </ingress>
-
-                    </cloudhub2Deployment>
-                </configuration>
-
-            </plugin>
+        </cloudhub2Deployment>
+    </configuration>
+</plugin>
 		</plugins>
 	</build>
 
