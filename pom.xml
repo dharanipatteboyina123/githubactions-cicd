@@ -13,61 +13,51 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.9.3</app.runtime>
-		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
+		<app.runtime>4.11.3</app.runtime>
+		<mule.maven.plugin.version>4.6.1</mule.maven.plugin.version>
 	</properties>
+    
+    <distributionManagement>
+    <repository>
+        <id>anypoint-exchange-v3</id>
+        <name>Anypoint Exchange</name>
+        <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/001b9e0e-b33b-4b0b-a11d-1b175a5492f2/maven</url>
+        <layout>default</layout>
+    </repository>
+   </distributionManagement>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.2.0</version>
-			</plugin>
-			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-			</plugin>
-			<plugin>
-                <groupId>org.mule.tools.maven</groupId>
-                <artifactId>mule-maven-plugin</artifactId>
-                <version>${mule.maven.plugin.version}</version>
-                <extensions>true</extensions>
-
-                <configuration>
-                    <cloudhub2Deployment>
-
-                        <!-- Unique App Name -->
-                        <applicationName>my-mule-app-12345</applicationName>
-
-                        <!-- Environment -->
-                        <environment>Sandbox</environment>
-
-                        <!-- Region -->
-                        <region>us-east-1</region>
-
-                        <!-- Runtime -->
-                        <muleVersion>4.4.0</muleVersion>
-
-                        <!-- Scaling -->
-                        <replicas>1</replicas>
-
-                        <!-- CPU -->
-                        <vCores>0.1</vCores>
-
-                        <!-- Public Access -->
-                        <ingress>
-                            <publicUrl>true</publicUrl>
-                        </ingress>
-
-                    </cloudhub2Deployment>
-                </configuration>
-
-            </plugin>
-		</plugins>
-	</build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>3.2.0</version>
+        </plugin>
+        <plugin>
+            <groupId>org.mule.tools.maven</groupId>
+            <artifactId>mule-maven-plugin</artifactId>
+            <version>${mule.maven.plugin.version}</version>
+            <extensions>true</extensions>
+            <configuration>
+                <cloudhub2Deployment>
+                    <uri>https://anypoint.mulesoft.com</uri>
+                    <organizationId>001b9e0e-b33b-4b0b-a11d-1b175a5492f2</organizationId>
+                    <businessGroupId>001b9e0e-b33b-4b0b-a11d-1b175a5492f2</businessGroupId>
+                    <provider>MC</provider>
+                    <applicationName>my-mule-app-12345</applicationName>
+                    <environment>${anypoint.environment}</environment>
+                    <target>Cloudhub-US-East-1</target>
+                    <muleVersion>${app.runtime}</muleVersion>
+                    <connectedAppClientId>${anypoint.clientId}</connectedAppClientId>
+                    <connectedAppClientSecret>${anypoint.clientSecret}</connectedAppClientSecret>
+                    <connectedAppGrantType>client_credentials</connectedAppGrantType>
+                    <replicas>1</replicas>
+                    <vCores>0.1</vCores>
+                </cloudhub2Deployment>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 
 	<dependencies>
 		<dependency>

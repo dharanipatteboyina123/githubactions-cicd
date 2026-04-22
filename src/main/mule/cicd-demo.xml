@@ -9,13 +9,14 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<flow name="cicd-demoFlow" doc:id="4167cf25-ec16-4c6e-a44f-41fbb2704a1f" >
-		<http:listener doc:name="Listener" doc:id="eef0c748-b6c6-4533-887b-3f6ba49c57ba" config-ref="HTTP_Listener_config" path="/cicd"/>
+		<http:listener doc:id="3a8fd3d2-f054-4b22-958b-28909ad0b8ec" doc:name="" config-ref="HTTP_Listener_config" path="/cicd"/>
+		<logger level="INFO" doc:name="Logger" doc:id="78431660-4b03-407c-83e5-d2bb73e03838" message='"logging"'/>
 		<ee:transform doc:name="Transform Message" doc:id="ea8722ba-ff5d-4879-8db3-fa91732a4e49" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
-"Hi heloo dharani"]]></ee:set-payload>
+"Hi heloo dharani welcome tru again and again u can"]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
 	</flow>
