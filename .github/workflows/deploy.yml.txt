@@ -3,8 +3,7 @@ name: Mule CloudHub 2.0 Deploy
 on:
   push:
     branches:
-      - dev
-
+      - main   
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -26,6 +25,6 @@ jobs:
     - name: Deploy to CloudHub 2.0
       run: |
         mvn deploy -DmuleDeploy \
-        -Danypoint.username=dharanipatteboyina@gmail.com\
-        -Danypoint.password=Dharu@143job\
+        -Danypoint.username=dharanipatteboyina@gmail.com \
+        -Danypoint.password=Dharu@143job \
         -Denvironment=Sandbox
