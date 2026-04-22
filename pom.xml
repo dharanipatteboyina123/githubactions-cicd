@@ -41,6 +41,7 @@
 
             <applicationName>my-mule-app-12345</applicationName>
             <environment>Sandbox</environment>
+            <target>Cloudhub-US-East-1</target>
             <muleVersion>${app.runtime}</muleVersion>
 
             <replicas>1</replicas>
