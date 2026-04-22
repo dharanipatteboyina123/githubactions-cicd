@@ -44,6 +44,7 @@
             <environment>Sandbox</environment>
             <target>Cloudhub-US-East-1</target>
             <muleVersion>${app.runtime}</muleVersion>
+            <businessGroup>ChandlerSandbox</businessGroup>
             
 
       <!-- Connected App -->
