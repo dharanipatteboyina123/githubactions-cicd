@@ -41,6 +41,7 @@
             <configuration>
                 <cloudhub2Deployment>
                     <uri>https://anypoint.mulesoft.com</uri>
+                    <organizationId>001b9e0e-b33b-4b0b-a11d-1b175a5492f2</organizationId>
                     <businessGroupId>001b9e0e-b33b-4b0b-a11d-1b175a5492f2</businessGroupId>
                     <provider>MC</provider>
                     <applicationName>my-mule-app-12345</applicationName>

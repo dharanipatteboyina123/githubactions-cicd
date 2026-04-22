@@ -23,4 +23,4 @@ jobs:
       run: mvn clean package
 
     - name: Deploy to CloudHub 2.0
-      run: mvn clean deploy -X -DmuleDeploy "-Danypoint.clientId=58e295be816e4999858a7ebf507b11ce" "-Danypoint.clientSecret=5f004Bd0F1F0445299f43b1Be34a6443" "-Danypoint.environment=Sandbox"
+      run: mvn clean deploy -X -DmuleDeploy "-Danypoint.clientId=58e295be816e4999858a7ebf507b11ce" "-Danypoint.clientSecret=5f004Bd0F1F0445299f43b1Be34a6443" "-Danypoint.environment=Sandbox" -Danypoint.organizationId=001b9e0e-b33b-4b0b-a11d-1b175a5492f2           
