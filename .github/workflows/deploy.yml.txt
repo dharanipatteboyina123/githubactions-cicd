@@ -3,7 +3,7 @@ name: Mule CloudHub 2.0 Deploy
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   deploy:
