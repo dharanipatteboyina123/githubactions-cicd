@@ -1,0 +1,31 @@
+name: Mule CloudHub 2.0 Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '8'
+
+    - name: Build Mule App
+      run: mvn clean package
+
+    - name: Deploy to CloudHub 2.0
+      run: |
+        mvn deploy -DmuleDeploy \
+        -Danypoint.username=dharanipatteboyina@gmail.com\
+        -Danypoint.password=Dharu@143job\
+        -Denvironment=Sandbox
