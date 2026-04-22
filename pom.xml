@@ -46,6 +46,7 @@
             <muleVersion>${app.runtime}</muleVersion>
             <username>${anypoint.username}</username>
             <password>${anypoint.password}</password>
+            <businessGroup>ChandlerSandbox</businessGroup>
             <replicas>1</replicas>
             <vCores>0.1</vCores>
             
