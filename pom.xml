@@ -36,7 +36,7 @@
                     <provider>MC</provider>
                     <applicationName>my-mule-app-12345</applicationName>
                     <environment>${anypoint.environment}</environment>
-                    <target>Cloudhub-US-West-2</target>
+                    <target>Cloudhub-US-East-1</target>
                     <muleVersion>${app.runtime}</muleVersion>
                     <connectedAppClientId>${anypoint.clientId}</connectedAppClientId>
                     <connectedAppClientSecret>${anypoint.clientSecret}</connectedAppClientSecret>
