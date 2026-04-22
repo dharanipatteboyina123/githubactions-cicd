@@ -32,7 +32,7 @@
 
     <configuration>
         <cloudhub2Deployment>
-
+            <uri>https://anypoint.mulesoft.com</uri>
             <applicationName>my-mule-app-12345</applicationName>
             <provider>MC</provider>
             <environment>Sandbox</environment>
